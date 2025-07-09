@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/models"
 )
 
 // CreateLogEntryCreatedCode is the HTTP code returned for type CreateLogEntryCreated

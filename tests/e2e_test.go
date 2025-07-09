@@ -56,17 +56,17 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/sigstore/rekor/pkg/api"
-	"github.com/sigstore/rekor/pkg/client"
-	generatedClient "github.com/sigstore/rekor/pkg/generated/client"
-	"github.com/sigstore/rekor/pkg/generated/client/entries"
-	"github.com/sigstore/rekor/pkg/generated/client/pubkey"
-	"github.com/sigstore/rekor/pkg/generated/models"
-	sigx509 "github.com/sigstore/rekor/pkg/pki/x509"
-	"github.com/sigstore/rekor/pkg/sharding"
-	"github.com/sigstore/rekor/pkg/signer"
-	_ "github.com/sigstore/rekor/pkg/types/intoto/v0.0.1"
-	rekord "github.com/sigstore/rekor/pkg/types/rekord/v0.0.1"
+	"github.com/Morrison76/rekor/pkg/api"
+	"github.com/Morrison76/rekor/pkg/client"
+	generatedClient "github.com/Morrison76/rekor/pkg/generated/client"
+	"github.com/Morrison76/rekor/pkg/generated/client/entries"
+	"github.com/Morrison76/rekor/pkg/generated/client/pubkey"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	sigx509 "github.com/Morrison76/rekor/pkg/pki/x509"
+	"github.com/Morrison76/rekor/pkg/sharding"
+	"github.com/Morrison76/rekor/pkg/signer"
+	_ "github.com/Morrison76/rekor/pkg/types/intoto/v0.0.1"
+	rekord "github.com/Morrison76/rekor/pkg/types/rekord/v0.0.1"
 	"github.com/sigstore/sigstore/pkg/cryptoutils"
 	"github.com/sigstore/sigstore/pkg/signature"
 	"github.com/sigstore/sigstore/pkg/signature/options"
@@ -606,7 +606,7 @@ func TestEntryUpload(t *testing.T) {
 	}
 }
 
-// Regression test for https://github.com/sigstore/rekor/pull/956
+// Regression test for https://github.com/Morrison76/rekor/pull/956
 // Requesting an inclusion proof concurrently with an entry write triggers
 // a race where the inclusion proof returned does not verify because the
 // tree head changes.
@@ -728,7 +728,7 @@ func getTotalTreeSize(t *testing.T) int64 {
 }
 
 // This test confirms that we validate tree ID when using the /api/v1/log/entries/retrieve endpoint
-// https://github.com/sigstore/rekor/issues/1014
+// https://github.com/Morrison76/rekor/issues/1014
 func TestSearchValidateTreeID(t *testing.T) {
 	// Create something and add it to the log
 	artifactPath := filepath.Join(t.TempDir(), "artifact")

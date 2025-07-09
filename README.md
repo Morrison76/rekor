@@ -1,4 +1,4 @@
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/sigstore/rekor/badge)](https://api.securityscorecards.dev/projects/github.com/sigstore/rekor)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Morrison76/rekor/badge)](https://api.securityscorecards.dev/projects/github.com/Morrison76/rekor)
 
 <p align="center">
   <img style="max-width: 100%;width: 300px;" src="https://raw.githubusercontent.com/sigstore/community/main/artwork/rekor/horizontal/color/sigstore_rekor-horizontal-color.svg" alt="Rekor logo"/>
@@ -31,7 +31,7 @@ Building on the active development in the Certificate Transparency ecosystem, Re
 [tile-based log](https://transparency.dev/articles/tile-based-logs/) and will use a modernized version of Trillian,
 [Trillian-Tessera](https://github.com/transparency-dev/trillian-tessera).
 
-Follow its progress on the [rekor-tiles](https://github.com/sigstore/rekor-tiles/) repo, and learn more about
+Follow its progress on the [rekor-tiles](https://github.com/Morrison76/rekor-tiles/) repo, and learn more about
 Rekor v2 on the [proposal](https://docs.google.com/document/d/1Mi9OhzrucIyt-UCLk_FxO2_xSQZW9ow9U3Lv0ZB_PpM/edit?resourcekey=0-4rPbZPyCS7QDj26Hk0UyvA&tab=t.0#heading=h.bjitqo6lwsmn)
 and [design doc](https://docs.google.com/document/d/1qZ-lkpbQkBzV45rtemWYmT6ReqCwjTt5TbMDFLdaPyM/edit?resourcekey=0-bMAyN9EKPDvB0H3edYi_Cw&tab=t.0#heading=h.xzptrog8pyxf).
 As we near a V2 release, we plan to merge the rekor-tiles codebase into this repository.
@@ -50,7 +50,7 @@ For uptime data on the Rekor public instance, see [https://status.sigstore.dev](
 
 More details on the public instance can be found at [docs.sigstore.dev](https://docs.sigstore.dev/rekor/public-instance).
 
-The attestation size limit for uploads to the public instance is [100KB](https://github.com/sigstore/rekor/blob/18c81d9f4def67c72f630c5406e26d5e568bc83b/cmd/rekor-server/app/root.go#L104). If you need to upload larger files, please run your own instance of Rekor. You can find instructions for doing so in the [installation](https://docs.sigstore.dev/rekor/overview#usage-and-installation) documentation.
+The attestation size limit for uploads to the public instance is [100KB](https://github.com/Morrison76/rekor/blob/18c81d9f4def67c72f630c5406e26d5e568bc83b/cmd/rekor-server/app/root.go#L104). If you need to upload larger files, please run your own instance of Rekor. You can find instructions for doing so in the [installation](https://docs.sigstore.dev/rekor/overview#usage-and-installation) documentation.
 
 ### Installation
 
@@ -65,7 +65,7 @@ For examples of uploading signatures for all the supported types to rekor, see [
 
 ### Custom schemas / manifests (rekor type)
 
-Rekor allows customized manifests (which term them as types), [type customization is outlined here](https://github.com/sigstore/rekor/tree/main/pkg/types).
+Rekor allows customized manifests (which term them as types), [type customization is outlined here](https://github.com/Morrison76/rekor/tree/main/pkg/types).
 
 ### API
 

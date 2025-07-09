@@ -24,20 +24,20 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/swag"
-	rclient "github.com/sigstore/rekor/pkg/generated/client"
-	"github.com/sigstore/rekor/pkg/generated/models"
+	rclient "github.com/Morrison76/rekor/pkg/generated/client"
+	"github.com/Morrison76/rekor/pkg/generated/models"
 
-	"github.com/sigstore/rekor/pkg/verify"
+	"github.com/Morrison76/rekor/pkg/verify"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/sigstore/rekor/cmd/rekor-cli/app/format"
-	"github.com/sigstore/rekor/cmd/rekor-cli/app/state"
-	"github.com/sigstore/rekor/pkg/client"
-	"github.com/sigstore/rekor/pkg/generated/client/pubkey"
-	"github.com/sigstore/rekor/pkg/generated/client/tlog"
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/cmd/rekor-cli/app/format"
+	"github.com/Morrison76/rekor/cmd/rekor-cli/app/state"
+	"github.com/Morrison76/rekor/pkg/client"
+	"github.com/Morrison76/rekor/pkg/generated/client/pubkey"
+	"github.com/Morrison76/rekor/pkg/generated/client/tlog"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/util"
 	"github.com/sigstore/sigstore/pkg/signature"
 )
 

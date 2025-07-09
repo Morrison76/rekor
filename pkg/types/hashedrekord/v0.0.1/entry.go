@@ -32,13 +32,13 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/pki"
-	"github.com/sigstore/rekor/pkg/pki/x509"
-	"github.com/sigstore/rekor/pkg/types"
-	hashedrekord "github.com/sigstore/rekor/pkg/types/hashedrekord"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/pki"
+	"github.com/Morrison76/rekor/pkg/pki/x509"
+	"github.com/Morrison76/rekor/pkg/types"
+	hashedrekord "github.com/Morrison76/rekor/pkg/types/hashedrekord"
+	"github.com/Morrison76/rekor/pkg/util"
 	"github.com/sigstore/sigstore/pkg/signature/options"
 )
 

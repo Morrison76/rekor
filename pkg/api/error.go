@@ -23,12 +23,12 @@ import (
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/entries"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/index"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/pubkey"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/tlog"
-	"github.com/sigstore/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/entries"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/index"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/pubkey"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/tlog"
+	"github.com/Morrison76/rekor/pkg/log"
 )
 
 const (

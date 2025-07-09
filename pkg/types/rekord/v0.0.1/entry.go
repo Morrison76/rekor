@@ -33,16 +33,16 @@ import (
 	"github.com/go-openapi/swag"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/pki"
-	"github.com/sigstore/rekor/pkg/pki/minisign"
-	"github.com/sigstore/rekor/pkg/pki/pgp"
-	"github.com/sigstore/rekor/pkg/pki/ssh"
-	"github.com/sigstore/rekor/pkg/pki/x509"
-	"github.com/sigstore/rekor/pkg/types"
-	"github.com/sigstore/rekor/pkg/types/rekord"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/pki"
+	"github.com/Morrison76/rekor/pkg/pki/minisign"
+	"github.com/Morrison76/rekor/pkg/pki/pgp"
+	"github.com/Morrison76/rekor/pkg/pki/ssh"
+	"github.com/Morrison76/rekor/pkg/pki/x509"
+	"github.com/Morrison76/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/types/rekord"
+	"github.com/Morrison76/rekor/pkg/util"
 )
 
 const (

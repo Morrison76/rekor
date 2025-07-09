@@ -20,7 +20,7 @@ package main
 import (
 	"testing"
 
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/util"
 )
 
 // TestLogProofLastSizeBiggerThanCurrentLog tests that asking for a consistency proof for a size greater than the current log

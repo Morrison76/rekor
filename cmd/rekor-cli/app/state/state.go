@@ -22,7 +22,7 @@ import (
 	"path/filepath"
 
 	"github.com/mitchellh/go-homedir"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/util"
 )
 
 type persistedState map[string]*util.SignedCheckpoint

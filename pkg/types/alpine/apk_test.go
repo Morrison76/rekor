@@ -22,7 +22,7 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/sigstore/rekor/pkg/pki/x509"
+	"github.com/Morrison76/rekor/pkg/pki/x509"
 )
 
 func TestAlpinePackage(t *testing.T) {

@@ -24,10 +24,10 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-	"github.com/sigstore/rekor/pkg/generated/client"
-	"github.com/sigstore/rekor/pkg/generated/client/tlog"
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/generated/client"
+	"github.com/Morrison76/rekor/pkg/generated/client/tlog"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/util"
 	"github.com/sigstore/sigstore/pkg/signature"
 )
 

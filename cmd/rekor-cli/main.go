@@ -15,7 +15,7 @@
 
 package main
 
-import "github.com/sigstore/rekor/cmd/rekor-cli/app"
+import "github.com/Morrison76/rekor/cmd/rekor-cli/app"
 
 func main() {
 	app.Execute()

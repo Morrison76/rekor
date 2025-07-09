@@ -29,8 +29,8 @@ import (
 
 	fuzz "github.com/AdamKorcz/go-fuzz-headers-1"
 
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/types"
 )
 
 // Sets ArtifactHash

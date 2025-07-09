@@ -18,7 +18,7 @@ package main
 import (
 	"testing"
 
-	"github.com/sigstore/rekor/cmd/rekor-server/app"
+	"github.com/Morrison76/rekor/cmd/rekor-server/app"
 )
 
 func TestCover(_ *testing.T) {

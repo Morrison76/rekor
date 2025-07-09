@@ -21,8 +21,8 @@ import (
 
 	rekor_pb "github.com/sigstore/protobuf-specs/gen/pb-go/rekor/v1"
 
-	"github.com/sigstore/rekor/pkg/log"
-	tleutils "github.com/sigstore/rekor/pkg/tle"
+	"github.com/Morrison76/rekor/pkg/log"
+	tleutils "github.com/Morrison76/rekor/pkg/tle"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

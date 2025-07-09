@@ -28,8 +28,8 @@ import (
 	"github.com/go-openapi/swag"
 	"go.uber.org/goleak"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/types"
 )
 
 func TestMain(m *testing.M) {

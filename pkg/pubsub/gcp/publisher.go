@@ -24,8 +24,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sigstore/rekor/pkg/events"
-	sigpubsub "github.com/sigstore/rekor/pkg/pubsub"
+	"github.com/Morrison76/rekor/pkg/events"
+	sigpubsub "github.com/Morrison76/rekor/pkg/pubsub"
 
 	"cloud.google.com/go/pubsub"
 	"google.golang.org/api/option"

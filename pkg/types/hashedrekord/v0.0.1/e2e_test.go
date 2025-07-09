@@ -28,9 +28,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sigstore/rekor/pkg/client"
-	"github.com/sigstore/rekor/pkg/generated/client/entries"
-	"github.com/sigstore/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/client"
+	"github.com/Morrison76/rekor/pkg/generated/client/entries"
+	"github.com/Morrison76/rekor/pkg/types"
 	"github.com/sigstore/sigstore/pkg/cryptoutils"
 	"github.com/sigstore/sigstore/pkg/signature"
 )

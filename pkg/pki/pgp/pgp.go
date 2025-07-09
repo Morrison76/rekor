@@ -30,12 +30,12 @@ import (
 
 	"github.com/asaskevich/govalidator"
 
-	//TODO: https://github.com/sigstore/rekor/issues/286
+	//TODO: https://github.com/Morrison76/rekor/issues/286
 	"golang.org/x/crypto/openpgp"        //nolint:staticcheck
 	"golang.org/x/crypto/openpgp/armor"  //nolint:staticcheck
 	"golang.org/x/crypto/openpgp/packet" //nolint:staticcheck
 
-	"github.com/sigstore/rekor/pkg/pki/identity"
+	"github.com/Morrison76/rekor/pkg/pki/identity"
 	"github.com/sigstore/sigstore/pkg/cryptoutils"
 	sigsig "github.com/sigstore/sigstore/pkg/signature"
 )

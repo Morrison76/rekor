@@ -31,7 +31,7 @@ import (
 	"github.com/google/trillian/types"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/testutil"
-	"github.com/sigstore/rekor/pkg/witness/mockclient"
+	"github.com/Morrison76/rekor/pkg/witness/mockclient"
 	"github.com/sigstore/sigstore/pkg/signature"
 	"go.uber.org/goleak"
 )

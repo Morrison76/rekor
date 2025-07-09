@@ -1,11 +1,11 @@
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish
-to make via an [issue](https://github.com/sigstore/rekor/issues).
+to make via an [issue](https://github.com/Morrison76/rekor/issues).
 
 ## Pull Request Process
 
-1. Create an [issue](https://github.com/sigstore/rekor/issues)
+1. Create an [issue](https://github.com/Morrison76/rekor/issues)
    outlining the fix or feature.
 2. Fork the rekor repository to your own github account and clone it locally.
 3. Hack on your changes.
@@ -118,5 +118,5 @@ Origin](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---signo
 ## Code of Conduct
 
 Rekor adheres to and enforces the [Contributor Covenant](http://contributor-covenant.org/version/1/4/) Code of Conduct.
-Please take a moment to read the [CODE_OF_CONDUCT.md](https://github.com/sigstore/rekor/blob/master/CODE_OF_CONDUCT.md) document.
+Please take a moment to read the [CODE_OF_CONDUCT.md](https://github.com/Morrison76/rekor/blob/master/CODE_OF_CONDUCT.md) document.
 

@@ -25,7 +25,7 @@ import (
 	"strings"
 
 	fuzz "github.com/AdamKorcz/go-fuzz-headers-1"
-	"github.com/sigstore/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/types"
 )
 
 // Allows the fuzzer to create a .SIGN filename

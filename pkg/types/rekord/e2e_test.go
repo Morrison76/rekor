@@ -25,8 +25,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	sigx509 "github.com/sigstore/rekor/pkg/pki/x509"
-	"github.com/sigstore/rekor/pkg/util"
+	sigx509 "github.com/Morrison76/rekor/pkg/pki/x509"
+	"github.com/Morrison76/rekor/pkg/util"
 )
 
 func TestUploadVerifyHashedRekord(t *testing.T) {

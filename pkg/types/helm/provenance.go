@@ -24,7 +24,7 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	//TODO: https://github.com/sigstore/rekor/issues/286
+	//TODO: https://github.com/Morrison76/rekor/issues/286
 	"golang.org/x/crypto/openpgp/clearsign" //nolint:staticcheck
 )
 

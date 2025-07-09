@@ -27,7 +27,7 @@ import (
 	"strings"
 
 	minisign "github.com/jedisct1/go-minisign"
-	"github.com/sigstore/rekor/pkg/pki/identity"
+	"github.com/Morrison76/rekor/pkg/pki/identity"
 	"github.com/sigstore/sigstore/pkg/cryptoutils"
 	sigsig "github.com/sigstore/sigstore/pkg/signature"
 	"golang.org/x/crypto/blake2b"
@@ -142,7 +142,7 @@ func NewPublicKey(r io.Reader) (*PublicKey, error) {
 	// There are three ways a minisign key can be stored.
 	// 1. The entire text key
 	// 2. A base64 encoded string
-	// 3. A legacy format we stored of just the key material (no key ID or Algorithm) due to bug fixed in https://github.com/sigstore/rekor/pull/562
+	// 3. A legacy format we stored of just the key material (no key ID or Algorithm) due to bug fixed in https://github.com/Morrison76/rekor/pull/562
 	key, err := minisign.DecodePublicKey(inputString)
 	if err == nil {
 		k.key = &key

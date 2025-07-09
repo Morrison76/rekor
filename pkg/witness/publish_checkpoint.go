@@ -25,9 +25,9 @@ import (
 	"github.com/google/trillian/types"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/redis/go-redis/v9"
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/trillianclient"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/trillianclient"
+	"github.com/Morrison76/rekor/pkg/util"
 	"github.com/sigstore/sigstore/pkg/signature"
 	"google.golang.org/grpc/codes"
 )

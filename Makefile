@@ -118,13 +118,13 @@ ko: ## Build and publish container images using ko
 	LDFLAGS="$(CLI_LDFLAGS)" GIT_HASH=$(GIT_HASH) GIT_VERSION=$(GIT_VERSION) \
 	ko publish --base-import-paths \
 		--platform=all --tags $(GIT_VERSION) --tags $(GIT_HASH) \
-		--image-refs rekorCliImagerefs github.com/sigstore/rekor/cmd/rekor-cli
+		--image-refs rekorCliImagerefs github.com/Morrison76/rekor/cmd/rekor-cli
 
 	# backfill-index
 	LDFLAGS="$(SERVER_LDFLAGS)" GIT_HASH=$(GIT_HASH) GIT_VERSION=$(GIT_VERSION) \
 	ko publish --base-import-paths \
 		--platform=all --tags $(GIT_VERSION) --tags $(GIT_HASH) \
-		--image-refs bIndexImagerefs github.com/sigstore/rekor/cmd/backfill-index
+		--image-refs bIndexImagerefs github.com/Morrison76/rekor/cmd/backfill-index
 
 deploy: ## Deploy to Kubernetes using ko
 	LDFLAGS="$(SERVER_LDFLAGS)" GIT_HASH=$(GIT_HASH) GIT_VERSION=$(GIT_VERSION) ko apply -f config/
@@ -143,17 +143,17 @@ ko-local: ## Build container images locally using ko
 	KO_DOCKER_REPO=ko.local LDFLAGS="$(SERVER_LDFLAGS)" GIT_HASH=$(GIT_HASH) GIT_VERSION=$(GIT_VERSION) \
 	ko publish --base-import-paths \
 		--tags $(GIT_VERSION) --tags $(GIT_HASH) --image-refs rekorImagerefs \
-		github.com/sigstore/rekor/cmd/rekor-server
+		github.com/Morrison76/rekor/cmd/rekor-server
 
 	KO_DOCKER_REPO=ko.local LDFLAGS="$(CLI_LDFLAGS)" GIT_HASH=$(GIT_HASH) GIT_VERSION=$(GIT_VERSION) \
 	ko publish --base-import-paths \
 		--tags $(GIT_VERSION) --tags $(GIT_HASH) --image-refs cliImagerefs \
-		github.com/sigstore/rekor/cmd/rekor-cli
+		github.com/Morrison76/rekor/cmd/rekor-cli
 
 	KO_DOCKER_REPO=ko.local LDFLAGS="$(SERVER_LDFLAGS)" GIT_HASH=$(GIT_HASH) GIT_VERSION=$(GIT_VERSION) \
 	ko publish --base-import-paths \
 		--tags $(GIT_VERSION) --tags $(GIT_HASH) --image-refs indexImagerefs \
-		github.com/sigstore/rekor/cmd/backfill-index
+		github.com/Morrison76/rekor/cmd/backfill-index
 
 fuzz: ## Run fuzz tests for a configured duration
 	go test -fuzz FuzzCreateEntryIDFromParts -fuzztime $(FUZZ_DURATION) ./pkg/sharding

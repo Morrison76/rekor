@@ -18,7 +18,7 @@ package jar
 import (
 	"testing"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/models"
 )
 
 func FuzzJarUnmarshal(f *testing.F) {

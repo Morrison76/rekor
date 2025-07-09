@@ -24,22 +24,22 @@ import (
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 
-	"github.com/sigstore/rekor/pkg/client"
-	"github.com/sigstore/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/client"
+	"github.com/Morrison76/rekor/pkg/log"
 
 	// these imports are to call the packages' init methods
-	_ "github.com/sigstore/rekor/pkg/types/alpine/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/cose/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/dsse/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/hashedrekord/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/helm/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/intoto/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/intoto/v0.0.2"
-	_ "github.com/sigstore/rekor/pkg/types/jar/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/rekord/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/rfc3161/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/rpm/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/tuf/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/alpine/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/cose/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/dsse/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/hashedrekord/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/helm/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/intoto/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/intoto/v0.0.2"
+	_ "github.com/Morrison76/rekor/pkg/types/jar/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/rekord/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/rfc3161/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/rpm/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/tuf/v0.0.1"
 )
 
 var rootCmd = &cobra.Command{

@@ -26,10 +26,10 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/sigstore/rekor/pkg/generated/client/entries"
-	"github.com/sigstore/rekor/pkg/generated/client/index"
-	"github.com/sigstore/rekor/pkg/generated/client/pubkey"
-	"github.com/sigstore/rekor/pkg/generated/client/tlog"
+	"github.com/Morrison76/rekor/pkg/generated/client/entries"
+	"github.com/Morrison76/rekor/pkg/generated/client/index"
+	"github.com/Morrison76/rekor/pkg/generated/client/pubkey"
+	"github.com/Morrison76/rekor/pkg/generated/client/tlog"
 )
 
 // Default rekor HTTP client.

@@ -20,12 +20,12 @@ import (
 	"io"
 	"testing"
 
-	"github.com/sigstore/rekor/pkg/pki/minisign"
-	"github.com/sigstore/rekor/pkg/pki/pgp"
-	"github.com/sigstore/rekor/pkg/pki/pkcs7"
-	"github.com/sigstore/rekor/pkg/pki/ssh"
-	"github.com/sigstore/rekor/pkg/pki/tuf"
-	"github.com/sigstore/rekor/pkg/pki/x509"
+	"github.com/Morrison76/rekor/pkg/pki/minisign"
+	"github.com/Morrison76/rekor/pkg/pki/pgp"
+	"github.com/Morrison76/rekor/pkg/pki/pkcs7"
+	"github.com/Morrison76/rekor/pkg/pki/ssh"
+	"github.com/Morrison76/rekor/pkg/pki/tuf"
+	"github.com/Morrison76/rekor/pkg/pki/x509"
 )
 
 var (

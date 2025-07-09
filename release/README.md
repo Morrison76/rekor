@@ -35,7 +35,7 @@ $ git push upstream ${RELEASE_TAG}
 
 Note that `upstream` should be the upstream `sigstore/rekor` repository. You may have to change this if you've configured remotes.
 
-4. Then go to the `Actions` tab and click on the [Cut Release workflow](https://github.com/sigstore/rekor/actions/workflows/cut-release.yml). Note you need
+4. Then go to the `Actions` tab and click on the [Cut Release workflow](https://github.com/Morrison76/rekor/actions/workflows/cut-release.yml). Note you need
 to be in [this list](https://github.com/sigstore/sigstore/blob/main/.github/workflows/reusable-release.yml#L45) to trigger this workflow.
 
 Click to run a workflow and insert the following parameters ("Cosign" is correct, this refers to the artifact signing key):

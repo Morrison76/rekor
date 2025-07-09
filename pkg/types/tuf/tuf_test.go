@@ -21,9 +21,9 @@ import (
 	"testing"
 
 	"github.com/go-openapi/swag"
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/pki"
-	"github.com/sigstore/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/pki"
+	"github.com/Morrison76/rekor/pkg/types"
 )
 
 type UnmarshalTester struct {

@@ -21,8 +21,8 @@ import (
 
 	"github.com/go-openapi/strfmt"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/pki"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/pki"
 )
 
 type BaseUnmarshalTester struct{}

@@ -30,7 +30,7 @@ import (
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/go-openapi/validate"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/models"
 )
 
 // NewSearchIndexParams creates a new SearchIndexParams object

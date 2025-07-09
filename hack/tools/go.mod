@@ -1,4 +1,4 @@
-module github.com/sigstore/rekor/hack/tools
+module github.com/Morrison76/rekor/hack/tools
 
 go 1.23.0
 

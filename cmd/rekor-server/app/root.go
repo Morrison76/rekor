@@ -26,8 +26,8 @@ import (
 
 	"github.com/go-chi/chi/middleware"
 	homedir "github.com/mitchellh/go-homedir"
-	"github.com/sigstore/rekor/pkg/api"
-	"github.com/sigstore/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/api"
+	"github.com/Morrison76/rekor/pkg/log"
 	"github.com/sigstore/sigstore/pkg/signature"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

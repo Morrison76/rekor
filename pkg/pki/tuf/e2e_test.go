@@ -19,7 +19,7 @@
 package tuf
 
 import (
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/util"
 	"path/filepath"
 	"testing"
 )

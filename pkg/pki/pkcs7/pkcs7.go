@@ -30,7 +30,7 @@ import (
 	"strings"
 
 	"github.com/sassoftware/relic/lib/pkcs7"
-	"github.com/sigstore/rekor/pkg/pki/identity"
+	"github.com/Morrison76/rekor/pkg/pki/identity"
 	"github.com/sigstore/sigstore/pkg/cryptoutils"
 	sigsig "github.com/sigstore/sigstore/pkg/signature"
 )

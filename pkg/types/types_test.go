@@ -23,7 +23,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"go.uber.org/goleak"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/models"
 )
 
 func TestMain(m *testing.M) {

@@ -43,7 +43,7 @@ setup_bastion() {
         curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
     fi
     if ! which rekor-cli >/dev/null ; then
-        wget -O /tmp/rekor-cli-linux-amd64 https://github.com/sigstore/rekor/releases/latest/download/rekor-cli-linux-amd64
+        wget -O /tmp/rekor-cli-linux-amd64 https://github.com/Morrison76/rekor/releases/latest/download/rekor-cli-linux-amd64
         sudo install -m 0755 /tmp/rekor-cli-linux-amd64 /usr/local/bin/rekor-cli
     fi
     gcloud auth print-access-token >/dev/null 2>&1 || gcloud auth login
@@ -55,7 +55,7 @@ setup_rekor() {
     helm repo add sigstore https://sigstore.github.io/helm-charts
     helm repo update
 
-    sha=$(git ls-remote https://github.com/sigstore/rekor HEAD | awk '{print substr($1, 1, 7)}')
+    sha=$(git ls-remote https://github.com/Morrison76/rekor HEAD | awk '{print substr($1, 1, 7)}')
     cat >values.yaml <<EOF
 server:
   ingress:

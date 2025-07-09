@@ -36,10 +36,10 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/entries"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/index"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/pubkey"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/tlog"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/entries"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/index"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/pubkey"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/tlog"
 )
 
 // NewRekorServerAPI creates a new RekorServer instance

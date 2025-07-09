@@ -35,18 +35,18 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 
 	v1 "github.com/sigstore/protobuf-specs/gen/pb-go/common/v1"
-	"github.com/sigstore/rekor/pkg/indexstorage"
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/pubsub"
-	"github.com/sigstore/rekor/pkg/sharding"
-	"github.com/sigstore/rekor/pkg/signer"
-	"github.com/sigstore/rekor/pkg/storage"
-	"github.com/sigstore/rekor/pkg/trillianclient"
-	"github.com/sigstore/rekor/pkg/util"
-	"github.com/sigstore/rekor/pkg/witness"
+	"github.com/Morrison76/rekor/pkg/indexstorage"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/pubsub"
+	"github.com/Morrison76/rekor/pkg/sharding"
+	"github.com/Morrison76/rekor/pkg/signer"
+	"github.com/Morrison76/rekor/pkg/storage"
+	"github.com/Morrison76/rekor/pkg/trillianclient"
+	"github.com/Morrison76/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/witness"
 	"github.com/sigstore/sigstore/pkg/signature"
 
-	_ "github.com/sigstore/rekor/pkg/pubsub/gcp" // Load GCP pubsub implementation
+	_ "github.com/Morrison76/rekor/pkg/pubsub/gcp" // Load GCP pubsub implementation
 )
 
 func dial(rpcServer string) (*grpc.ClientConn, error) {

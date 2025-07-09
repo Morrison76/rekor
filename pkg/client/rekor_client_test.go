@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sigstore/rekor/pkg/generated/client/index"
+	"github.com/Morrison76/rekor/pkg/generated/client/index"
 	"go.uber.org/goleak"
 )
 

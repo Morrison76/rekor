@@ -28,11 +28,11 @@ import (
 	"github.com/spf13/viper"
 	"google.golang.org/grpc/codes"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations/tlog"
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/trillianclient"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations/tlog"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/trillianclient"
+	"github.com/Morrison76/rekor/pkg/util"
 )
 
 // GetLogInfoHandler returns the current size of the tree and the STH

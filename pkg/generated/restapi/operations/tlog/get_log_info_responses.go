@@ -26,7 +26,7 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/models"
 )
 
 // GetLogInfoOKCode is the HTTP code returned for type GetLogInfoOK

@@ -30,13 +30,13 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/sigstore/rekor/pkg/log"
-	"github.com/sigstore/rekor/pkg/pki"
-	"github.com/sigstore/rekor/pkg/pki/pkcs7"
-	"github.com/sigstore/rekor/pkg/pki/x509"
-	"github.com/sigstore/rekor/pkg/types"
-	"github.com/sigstore/rekor/pkg/types/jar"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/log"
+	"github.com/Morrison76/rekor/pkg/pki"
+	"github.com/Morrison76/rekor/pkg/pki/pkcs7"
+	"github.com/Morrison76/rekor/pkg/pki/x509"
+	"github.com/Morrison76/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/types/jar"
+	"github.com/Morrison76/rekor/pkg/util"
 
 	"github.com/asaskevich/govalidator"
 
@@ -44,7 +44,7 @@ import (
 
 	"github.com/go-openapi/swag"
 	jarutils "github.com/sassoftware/relic/lib/signjar"
-	"github.com/sigstore/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/generated/models"
 	"github.com/spf13/viper"
 )
 

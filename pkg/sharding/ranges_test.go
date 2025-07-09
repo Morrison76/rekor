@@ -35,7 +35,7 @@ import (
 
 	"github.com/golang/mock/gomock"
 	"github.com/google/trillian/testonly"
-	"github.com/sigstore/rekor/pkg/signer"
+	"github.com/Morrison76/rekor/pkg/signer"
 	"github.com/sigstore/sigstore/pkg/cryptoutils"
 	"github.com/sigstore/sigstore/pkg/signature"
 

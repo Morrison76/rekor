@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: rekor-server
-        image: ko://github.com/sigstore/rekor/cmd/rekor-server
+        image: ko://github.com/Morrison76/rekor/cmd/rekor-server
         ports:
         - containerPort: 3000
         - containerPort: 2112 # metrics

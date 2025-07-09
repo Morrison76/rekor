@@ -49,25 +49,25 @@ import (
 	"golang.org/x/sync/errgroup"
 	"sigs.k8s.io/release-utils/version"
 
-	"github.com/sigstore/rekor/pkg/client"
-	rekorclient "github.com/sigstore/rekor/pkg/generated/client"
-	"github.com/sigstore/rekor/pkg/generated/client/entries"
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/client"
+	rekorclient "github.com/Morrison76/rekor/pkg/generated/client"
+	"github.com/Morrison76/rekor/pkg/generated/client/entries"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/types"
 
 	// these imports are to call the packages' init methods
-	_ "github.com/sigstore/rekor/pkg/types/alpine/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/cose/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/dsse/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/hashedrekord/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/helm/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/intoto/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/intoto/v0.0.2"
-	_ "github.com/sigstore/rekor/pkg/types/jar/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/rekord/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/rfc3161/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/rpm/v0.0.1"
-	_ "github.com/sigstore/rekor/pkg/types/tuf/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/alpine/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/cose/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/dsse/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/hashedrekord/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/helm/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/intoto/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/intoto/v0.0.2"
+	_ "github.com/Morrison76/rekor/pkg/types/jar/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/rekord/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/rfc3161/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/rpm/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/tuf/v0.0.1"
 )
 
 const (
@@ -132,7 +132,7 @@ var (
 	endIndex                = flag.Int("end", -1, "Last index to backfill")
 	rekorAddress            = flag.String("rekor-address", "", "Address for Rekor, e.g. https://rekor.sigstore.dev")
 	rekorDisableKeepalives  = flag.Bool("rekor-disable-keepalives", true, "Disable Keep-Alive connections (defaults to true, meaning Keep-Alive is disabled)")
-	rekorRetryCount         = flag.Uint("rekor-retry-count", 3, "Maximum number of times to retry rekor requests")                          // https://github.com/sigstore/rekor/blob/5988bfa6b0761be3a810047d23b3d3191ed5af3d/pkg/client/options.go#L36
+	rekorRetryCount         = flag.Uint("rekor-retry-count", 3, "Maximum number of times to retry rekor requests")                          // https://github.com/Morrison76/rekor/blob/5988bfa6b0761be3a810047d23b3d3191ed5af3d/pkg/client/options.go#L36
 	rekorRetryWaitMin       = flag.Duration("rekor-retry-wait-min", 1*time.Second, "Minimum time to wait between retrying rekor requests")  //nolint:revive // https://github.com/hashicorp/go-retryablehttp/blob/1542b31176d3973a6ecbc06c05a2d0df89b59afb/client.go#L49
 	rekorRetryWaitMax       = flag.Duration("rekor-retry-wait-max", 30*time.Second, "Maximum time to wait between retrying rekor requests") // https://github.com/hashicorp/go-retryablehttp/blob/1542b31176d3973a6ecbc06c05a2d0df89b59afb/client.go#L50
 	rekorHeaders            headers

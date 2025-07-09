@@ -37,9 +37,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sigstore/rekor/pkg/sharding"
+	"github.com/Morrison76/rekor/pkg/sharding"
 
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/util"
 )
 
 func TestDuplicates(t *testing.T) {

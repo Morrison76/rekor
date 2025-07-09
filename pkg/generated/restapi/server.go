@@ -40,7 +40,7 @@ import (
 	flag "github.com/spf13/pflag"
 	"golang.org/x/net/netutil"
 
-	"github.com/sigstore/rekor/pkg/generated/restapi/operations"
+	"github.com/Morrison76/rekor/pkg/generated/restapi/operations"
 )
 
 const (

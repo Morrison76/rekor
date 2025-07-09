@@ -1,4 +1,4 @@
-module github.com/sigstore/rekor
+module github.com/Morrison76/rekor
 
 go 1.23.0
 

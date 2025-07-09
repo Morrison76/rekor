@@ -20,7 +20,7 @@ package main
 import (
 	"testing"
 
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/util"
 )
 
 func TestGetNonExistentIndex(t *testing.T) {

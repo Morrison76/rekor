@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sigstore/rekor/pkg/events"
+	"github.com/Morrison76/rekor/pkg/events"
 	"golang.org/x/exp/slices"
 
 	rekor_pb "github.com/sigstore/protobuf-specs/gen/pb-go/rekor/v1"

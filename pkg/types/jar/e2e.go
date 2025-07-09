@@ -22,7 +22,7 @@ import (
 	"bytes"
 	"context"
 	"crypto"
-	"github.com/sigstore/rekor/pkg/util"
+	"github.com/Morrison76/rekor/pkg/util"
 	"os"
 	"strings"
 	"testing"
@@ -30,7 +30,7 @@ import (
 	"github.com/sassoftware/relic/lib/certloader"
 	"github.com/sassoftware/relic/lib/signjar"
 	"github.com/sassoftware/relic/lib/zipslicer"
-	sigx509 "github.com/sigstore/rekor/pkg/pki/x509"
+	sigx509 "github.com/Morrison76/rekor/pkg/pki/x509"
 )
 
 //note: reuses PKI artifacts from x509 tests
