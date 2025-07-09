@@ -16,8 +16,9 @@
 package main
 
 import "github.com/Morrison76/rekor/cmd/rekor-server/app"
-import _ "github.com/Morrison76/rekor/pkg/types/rekordtest"
-
+import (
+    _ "github.com/Morrison76/rekor/pkg/types/rekordtest" // обов'язково!
+)
 
 func main() {
 	app.Execute()

@@ -116,6 +116,7 @@ var serveCmd = &cobra.Command{
 			tuf.KIND:          {tuf_v001.APIVERSION},
 			hashedrekord.KIND: {hashedrekord_v001.APIVERSION},
 			dsse.KIND:         {dsse_v001.APIVERSION},
+			"rekordtest": "github.com/Morrison76/rekor/pkg/types/rekordtest",
 		}
 		for k, v := range pluggableTypeMap {
 			log.Logger.Infof("Loading support for pluggable type '%v'", k)
