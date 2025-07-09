@@ -55,6 +55,7 @@ import (
 	rpm_v001 "github.com/Morrison76/rekor/pkg/types/rpm/v0.0.1"
 	"github.com/Morrison76/rekor/pkg/types/tuf"
 	tuf_v001 "github.com/Morrison76/rekor/pkg/types/tuf/v0.0.1"
+    _ "github.com/Morrison76/rekor/pkg/types/rekordtest"
 )
 
 // serveCmd represents the serve command
