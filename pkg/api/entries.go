@@ -60,6 +60,8 @@ import (
 	"github.com/Morrison76/rekor/pkg/util"
 	"github.com/sigstore/sigstore/pkg/signature"
 	"github.com/sigstore/sigstore/pkg/signature/options"
+	 "github.com/Morrison76/rekor/pkg/types/participantrecord"
+
 )
 
 const (

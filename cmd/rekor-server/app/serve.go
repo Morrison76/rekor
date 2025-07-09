@@ -55,7 +55,7 @@ import (
 	rpm_v001 "github.com/Morrison76/rekor/pkg/types/rpm/v0.0.1"
 	"github.com/Morrison76/rekor/pkg/types/tuf"
 	tuf_v001 "github.com/Morrison76/rekor/pkg/types/tuf/v0.0.1"
-    _ "github.com/Morrison76/rekor/pkg/types/rekordtest"
+    participantrecord "github.com/Morrison76/rekor/pkg/types/participantrecord"
 )
 
 // serveCmd represents the serve command
@@ -117,7 +117,8 @@ var serveCmd = &cobra.Command{
 			tuf.KIND:          {tuf_v001.APIVERSION},
 			hashedrekord.KIND: {hashedrekord_v001.APIVERSION},
 			dsse.KIND:         {dsse_v001.APIVERSION},
-			"rekordtest": []string{"pkg/types/rekordtest"},
+			participantrecord.KIND: { participantrecord.APIVERSION}
+			"rekordtest": []string{"github.com/Morrison76/rekor/pkg/types/rekordtest"},
 		}
 		for k, v := range pluggableTypeMap {
 			log.Logger.Infof("Loading support for pluggable type '%v'", k)

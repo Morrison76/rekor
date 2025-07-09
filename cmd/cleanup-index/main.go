@@ -51,6 +51,8 @@ import (
 	_ "github.com/Morrison76/rekor/pkg/types/rfc3161/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/rpm/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/tuf/v0.0.1"
+	_ "github.com/Morrison76/rekor/pkg/types/participantrecord"
+
 )
 
 const (
