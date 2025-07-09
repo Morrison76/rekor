@@ -6,8 +6,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/sigstore/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/generated/models"
+	"github.com/Morrison76/rekor/pkg/types"
 )
 
 const Kind = "participantrecord"
@@ -110,8 +110,8 @@ func (e *Entry) CreateFromArtifactProperties(_ context.Context, _ types.Artifact
 	return nil, errors.New("not supported for participantrecord")
 }
 
-func (e *Entry) Verifier() (interface{}, error) {
-	return nil, nil // ми не використовуємо публічний ключ як PKI.Verifier
+func (e *Entry) Verifiers() ([]pki.PublicKey, error) {
+	return nil, nil
 }
 
 func (e *Entry) Insertable() (bool, error) {

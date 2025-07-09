@@ -33,7 +33,7 @@ PROJECT_NUMBER="498091336538"
 POOL_NAME="githubactions"
 PROVIDER_NAME="sigstore-rekor"
 LOCATION="global"
-REPO="sigstore/rekor"
+REPO="Morrison76/rekor"
 SERVICE_ACCOUNT_ID="github-actions-rekor"
 SERVICE_ACCOUNT="${SERVICE_ACCOUNT_ID}@${PROJECT_ID}.iam.gserviceaccount.com"
 
