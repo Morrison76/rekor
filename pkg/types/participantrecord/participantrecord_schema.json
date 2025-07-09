@@ -1,22 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://rekor.sigstore.dev/types/participantrecord/participantrecord_schema.json",
-  "title": "participantrecord schema",
+  "$id": "http://rekor.sigstore.dev/types/participantrecord/participantrecord_schema.json",
+  "title": "Participantrecord Schema",
+  "description": "Schema for Participantrecord object",
   "type": "object",
-  "required": ["participantId", "primaryPK"],
-  "properties": {
-    "participantId": {
-      "type": "string",
-      "description": "Unique participant ID"
-    },
-    "primaryPK": {
-      "type": "string",
-      "description": "Main public key"
-    },
-    "alternatePK": {
-      "type": "string",
-      "description": "Optional backup key"
+  "oneOf": [
+    {
+      "$ref": "v0.0.1/participantrecord_v0_0_1_schema.json"
     }
-  },
-  "additionalProperties": false
+  ]
 }
