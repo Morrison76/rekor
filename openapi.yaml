@@ -285,7 +285,7 @@ definitions:
           pattern: ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
         spec:
           type: object
-          $ref: 'pkg/types/participantrecord/participantrecord_schema.json'
+          $ref: 'pkg/types/participantrecord/v0.0.1/participantrecord_v0_0_1_schema.json'
       required:
         - apiVersion
         - spec
@@ -322,23 +322,6 @@ definitions:
         spec:
           type: object
           $ref: 'pkg/types/rpm/rpm_schema.json'
-      required:
-        - apiVersion
-        - spec
-      additionalProperties: false
-
-  tuf:
-    type: object
-    description: TUF metadata
-    allOf:
-    - $ref: '#/definitions/ProposedEntry'
-    - properties:
-        apiVersion:
-          type: string
-          pattern: ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
-        spec:
-          type: object
-          $ref: 'pkg/types/tuf/tuf_schema.json'
       required:
         - apiVersion
         - spec
@@ -440,23 +423,6 @@ definitions:
         spec:
           type: object
           $ref: 'pkg/types/rfc3161/rfc3161_schema.json'
-      required:
-        - apiVersion
-        - spec
-      additionalProperties: false
-
-  dsse:
-    type: object
-    description: DSSE envelope
-    allOf:
-    - $ref: '#/definitions/ProposedEntry'
-    - properties:
-        apiVersion:
-          type: string
-          pattern: ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
-        spec:
-          type: object
-          $ref: 'pkg/types/dsse/dsse_schema.json'
       required:
         - apiVersion
         - spec

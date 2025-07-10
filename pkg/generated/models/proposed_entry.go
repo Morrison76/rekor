@@ -110,12 +110,6 @@ func unmarshalProposedEntry(data []byte, consumer runtime.Consumer) (ProposedEnt
 			return nil, err
 		}
 		return &result, nil
-	case "dsse":
-		var result Dsse
-		if err := consumer.Consume(buf2, &result); err != nil {
-			return nil, err
-		}
-		return &result, nil
 	case "hashedrekord":
 		var result Hashedrekord
 		if err := consumer.Consume(buf2, &result); err != nil {
@@ -160,12 +154,6 @@ func unmarshalProposedEntry(data []byte, consumer runtime.Consumer) (ProposedEnt
 		return &result, nil
 	case "rpm":
 		var result Rpm
-		if err := consumer.Consume(buf2, &result); err != nil {
-			return nil, err
-		}
-		return &result, nil
-	case "tuf":
-		var result Tuf
 		if err := consumer.Consume(buf2, &result); err != nil {
 			return nil, err
 		}

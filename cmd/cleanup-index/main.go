@@ -41,7 +41,6 @@ import (
 	// these imports are to call the packages' init methods
 	_ "github.com/Morrison76/rekor/pkg/types/alpine/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/cose/v0.0.1"
-	_ "github.com/Morrison76/rekor/pkg/types/dsse/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/hashedrekord/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/helm/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/intoto/v0.0.1"
@@ -50,8 +49,7 @@ import (
 	_ "github.com/Morrison76/rekor/pkg/types/rekord/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/rfc3161/v0.0.1"
 	_ "github.com/Morrison76/rekor/pkg/types/rpm/v0.0.1"
-	_ "github.com/Morrison76/rekor/pkg/types/tuf/v0.0.1"
-	_ "github.com/Morrison76/rekor/pkg/types/participantrecord"
+	_ "github.com/Morrison76/rekor/pkg/types/participantrecord/v0.0.1"
 
 )
 

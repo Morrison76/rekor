@@ -28,7 +28,7 @@ type Participantrecord struct {
 
 	// spec
 	// Required: true
-	Spec ParticipantrecordSchema `json:"spec"`
+	Spec *ParticipantrecordV001Schema `json:"spec"`
 }
 
 // Kind gets the kind of this subtype
@@ -51,7 +51,7 @@ func (m *Participantrecord) UnmarshalJSON(raw []byte) error {
 
 		// spec
 		// Required: true
-		Spec ParticipantrecordSchema `json:"spec"`
+		Spec *ParticipantrecordV001Schema `json:"spec"`
 	}
 	buf := bytes.NewBuffer(raw)
 	dec := json.NewDecoder(buf)
@@ -102,7 +102,7 @@ func (m Participantrecord) MarshalJSON() ([]byte, error) {
 
 		// spec
 		// Required: true
-		Spec ParticipantrecordSchema `json:"spec"`
+		Spec *ParticipantrecordV001Schema `json:"spec"`
 	}{
 
 		APIVersion: m.APIVersion,
@@ -158,8 +158,19 @@ func (m *Participantrecord) validateAPIVersion(formats strfmt.Registry) error {
 
 func (m *Participantrecord) validateSpec(formats strfmt.Registry) error {
 
-	if m.Spec == nil {
-		return errors.Required("spec", "body", nil)
+	if err := validate.Required("spec", "body", m.Spec); err != nil {
+		return err
+	}
+
+	if m.Spec != nil {
+		if err := m.Spec.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("spec")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("spec")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -169,9 +180,30 @@ func (m *Participantrecord) validateSpec(formats strfmt.Registry) error {
 func (m *Participantrecord) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateSpec(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Participantrecord) contextValidateSpec(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Spec != nil {
+
+		if err := m.Spec.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("spec")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("spec")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

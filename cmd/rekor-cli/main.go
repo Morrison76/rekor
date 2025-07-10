@@ -17,7 +17,7 @@ package main
 
 import "github.com/Morrison76/rekor/cmd/rekor-cli/app"
 import (
-	_ "github.com/Morrison76/rekor/pkg/types/rekordtest" // required for tests
+	_ "github.com/Morrison76/rekor/pkg/types/participantrecord/v0.0.1"
 )
 
 func main() {

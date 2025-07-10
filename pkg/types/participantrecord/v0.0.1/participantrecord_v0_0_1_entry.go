@@ -11,12 +11,14 @@ import (
 
 	"github.com/Morrison76/rekor/pkg/generated/models"
 	"github.com/Morrison76/rekor/pkg/types"
+	"github.com/Morrison76/rekor/pkg/types/participantrecord"
+	"github.com/Morrison76/rekor/pkg/pki"
 )
 
 const APIVERSION = "0.0.1"
 
 func init() {
-	if err := VersionMap.SetEntryFactory(APIVERSION, NewEntry); err != nil {
+	if err := participantrecord.VersionMap.SetEntryFactory(APIVERSION, NewEntry); err != nil {
 		panic(err)
 	}
 }
@@ -35,17 +37,16 @@ func (v *V001Entry) APIVersion() string {
 
 func (v *V001Entry) IndexKeys() ([]string, error) {
 	return []string{
-		fmt.Sprintf("participantId:%s", v.Obj.ParticipantId),
-		fmt.Sprintf("primaryPK:%s", v.Obj.PrimaryPk),
+		fmt.Sprintf("participantId:%s", v.Obj.ParticipantID),
+		fmt.Sprintf("primaryPK:%s", v.Obj.PrimaryPK),
 	}, nil
 }
 
 func (v *V001Entry) Canonicalize(_ context.Context) ([]byte, error) {
-	// canonical entry
 	canonicalEntry := models.ParticipantrecordV001Schema{
-		ParticipantId: v.Obj.ParticipantId,
-		PrimaryPk:     v.Obj.PrimaryPk,
-		AlternatePk:   v.Obj.AlternatePk,
+		ParticipantID: v.Obj.ParticipantID,
+		PrimaryPK:     v.Obj.PrimaryPK,
+		AlternatePK:   v.Obj.AlternatePK,
 	}
 
 	obj := models.Participantrecord{
@@ -70,10 +71,10 @@ func (v *V001Entry) Unmarshal(pe models.ProposedEntry) error {
 }
 
 func (v *V001Entry) validate() error {
-	if strings.TrimSpace(v.Obj.ParticipantId) == "" {
+	if strings.TrimSpace(swag.StringValue(v.Obj.ParticipantID)) == "" {
 		return errors.New("missing participantId")
 	}
-	if strings.TrimSpace(v.Obj.PrimaryPk) == "" {
+	if strings.TrimSpace(swag.StringValue(v.Obj.PrimaryPK)) == "" {
 		return errors.New("missing primaryPK")
 	}
 	return nil
@@ -83,7 +84,7 @@ func (v *V001Entry) CreateFromArtifactProperties(_ context.Context, _ types.Arti
 	return nil, errors.New("not supported for participantrecord")
 }
 
-func (v *V001Entry) Verifiers() ([]types.PublicKey, error) {
+func (v *V001Entry) Verifiers() ([]pki.PublicKey, error) {
 	return nil, nil
 }
 
