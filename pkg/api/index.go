@@ -44,7 +44,7 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 	var result = NewCollection(queryOperator)
 
 	var lookupKeys []string
-	log.Fatalf(" 1 Index search by participantID is looking by param: %s", params.Query.ParticipantID)
+	log.Printf(" 1 Index search by participantID is looking by param: %s", params.Query.ParticipantID)
 
 	if params.Query.Hash != "" {
 		// This must be a valid hash
@@ -104,23 +104,23 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 		}
 	}
 
-	log.Logger.Infof("2 Index search by participantID is looking by param: %s", params.Query.ParticipantID)
+	log.Printf("2Index search by participantID is looking by param: %s", params.Query.ParticipantID)
 
 	if params.Query.ParticipantID != "" {
 		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(params.Query.ParticipantID))
-		log.Logger.Infof("[DEBUG] Search request by participantID: %s", participantKey)
+		log.Printf("[DEBUG] Search request by participantID: %s", participantKey)
 	
 		if queryOperator == "or" {
-			log.Logger.Infof("[DEBUG] Appending participantKey to lookupKeys: %s", participantKey)
+			log.Printf("[DEBUG] Appending participantKey to lookupKeys: %s", participantKey)
 			lookupKeys = append(lookupKeys, participantKey)
 		} else {
-			log.Logger.Infof("[DEBUG] Querying indexStorageClient.LookupIndices with key: %s", participantKey)
+			log.Printf("[DEBUG] Querying indexStorageClient.LookupIndices with key: %s", participantKey)
 			resultUUIDs, err := indexStorageClient.LookupIndices(httpReqCtx, []string{participantKey})
 			if err != nil {
-				log.Logger.Infof("[ERROR] indexStorageClient.LookupIndices failed: %v", err)
+				log.Printf("[ERROR] indexStorageClient.LookupIndices failed: %v", err)
 				return handleRekorAPIError(params, http.StatusInternalServerError, fmt.Errorf("index storage error: %w", err), indexStorageUnexpectedResult)
 			}
-			log.Logger.Infof("[DEBUG] Retrieved UUIDs: %v", resultUUIDs)
+			log.Printf("[DEBUG] Retrieved UUIDs: %v", resultUUIDs)
 			result.Add(resultUUIDs)
 		}
 	}
