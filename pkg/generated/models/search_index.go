@@ -24,6 +24,8 @@ type SearchIndex struct {
 	// Format: email
 	Email strfmt.Email `json:"email,omitempty"`
 
+	ParticipantID string `json:"participantid,omitempty"`
+
 	// hash
 	// Pattern: ^(sha512:)?[0-9a-fA-F]{128}$|^(sha256:)?[0-9a-fA-F]{64}$|^(sha1:)?[0-9a-fA-F]{40}$
 	Hash string `json:"hash,omitempty"`
@@ -45,6 +47,10 @@ func (m *SearchIndex) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateHash(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateParticipantID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -80,6 +86,18 @@ func (m *SearchIndex) validateHash(formats strfmt.Registry) error {
 	}
 
 	if err := validate.Pattern("hash", "body", m.Hash, `^(sha512:)?[0-9a-fA-F]{128}$|^(sha256:)?[0-9a-fA-F]{64}$|^(sha1:)?[0-9a-fA-F]{40}$`); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *SearchIndex) validateParticipantID(formats strfmt.Registry) error {
+	if swag.IsZero(m.ParticipantID) {
+		return nil
+	}
+
+	if err := validate.Pattern("participantid", "body", m.ParticipantID, `^CHE[0-9a-zA-Z\-]{1,}$`); err != nil {
 		return err
 	}
 

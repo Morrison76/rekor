@@ -59,41 +59,6 @@ paths:
           $ref: '#/responses/BadContent'
         default:
           $ref: '#/responses/InternalServerError'
-
-  /api/v1/index/search:
-    get:
-      summary: Search Rekor index by metadata
-      operationId: searchIndex
-      tags:
-        - index
-      parameters:
-        - name: participantID
-          in: query
-          required: false
-          type: string
-        - name: email
-          in: query
-          required: false
-          type: string
-        - name: publicKey
-          in: query
-          required: false
-          type: string
-        - name: operator
-          in: query
-          required: false
-          type: string
-          enum: [and, or]
-      responses:
-        200:
-          description: List of matching UUIDs
-          schema:
-            type: array
-            items:
-              type: string
-        501:
-          description: Not implemented
-
   /api/v1/log:
     get:
       summary: Get information about the current state of the transparency log
@@ -512,6 +477,8 @@ definitions:
       email:
         type: string
         format: email
+      participantid:
+        type: string
       publicKey:
         type: object
         properties:
