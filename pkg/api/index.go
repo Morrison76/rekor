@@ -16,6 +16,7 @@
 package api
 
 import (
+	"log"
 	"context"
 	"crypto/sha256"
 	"encoding/hex"
@@ -102,14 +103,20 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 		}
 	}
 	if params.Query.ParticipantID != "" {
-		participantKey := fmt.Sprintf("participantid:%s", params.Query.ParticipantID)
+		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(params.Query.ParticipantID))
+		log.Printf("[DEBUG] Search request by participantID: %s", participantKey)
+	
 		if queryOperator == "or" {
+			log.Printf("[DEBUG] Appending participantKey to lookupKeys: %s", participantKey)
 			lookupKeys = append(lookupKeys, participantKey)
 		} else {
+			log.Printf("[DEBUG] Querying indexStorageClient.LookupIndices with key: %s", participantKey)
 			resultUUIDs, err := indexStorageClient.LookupIndices(httpReqCtx, []string{participantKey})
 			if err != nil {
+				log.Printf("[ERROR] indexStorageClient.LookupIndices failed: %v", err)
 				return handleRekorAPIError(params, http.StatusInternalServerError, fmt.Errorf("index storage error: %w", err), indexStorageUnexpectedResult)
 			}
+			log.Printf("[DEBUG] Retrieved UUIDs: %v", resultUUIDs)
 			result.Add(resultUUIDs)
 		}
 	}
