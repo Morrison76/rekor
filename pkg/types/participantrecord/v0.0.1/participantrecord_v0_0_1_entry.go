@@ -37,8 +37,8 @@ func (v *V001Entry) APIVersion() string {
 
 func (v *V001Entry) IndexKeys() ([]string, error) {
 	return []string{
-		fmt.Sprintf("participantId:%s", v.Obj.ParticipantID),
-		fmt.Sprintf("primaryPK:%s", v.Obj.PrimaryPK),
+		fmt.Sprintf("participantid:%s", v.Obj.ParticipantID),
+		fmt.Sprintf("primarypk:%s", v.Obj.PrimaryPK),
 	}, nil
 }
 

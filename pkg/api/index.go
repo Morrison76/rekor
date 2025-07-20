@@ -101,6 +101,18 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 			result.Add(resultUUIDs)
 		}
 	}
+	if params.Query.ParticipantID != "" {
+		participantKey := fmt.Sprintf("participantid:%s", params.Query.ParticipantID)
+		if queryOperator == "or" {
+			lookupKeys = append(lookupKeys, participantKey)
+		} else {
+			resultUUIDs, err := indexStorageClient.LookupIndices(httpReqCtx, []string{participantKey})
+			if err != nil {
+				return handleRekorAPIError(params, http.StatusInternalServerError, fmt.Errorf("index storage error: %w", err), indexStorageUnexpectedResult)
+			}
+			result.Add(resultUUIDs)
+		}
+	}
 	if len(lookupKeys) > 0 {
 		resultUUIDs, err := indexStorageClient.LookupIndices(httpReqCtx, lookupKeys)
 		if err != nil {
