@@ -36,8 +36,11 @@ func (v *V001Entry) APIVersion() string {
 }
 
 func (v *V001Entry) IndexKeys() ([]string, error) {
+	if v.Obj.ParticipantID == nil {
+		return nil, fmt.Errorf("ParticipantID is nil")
+	}
 	return []string{
-		fmt.Sprintf("participantid:%s", strings.ToLower(v.Obj.ParticipantID)),
+		fmt.Sprintf("participantid:%s", strings.ToLower(*v.Obj.ParticipantID)),
 	}, nil
 }
 

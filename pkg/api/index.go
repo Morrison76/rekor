@@ -102,8 +102,8 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 			result.Add(resultUUIDs)
 		}
 	}
-	if params.Query.ParticipantID != "" {
-		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(params.Query.ParticipantID))
+	if params.Query.ParticipantID != nil && *params.Query.ParticipantID != "" {
+		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(*params.Query.ParticipantID))
 		log.Printf("[DEBUG] Search request by participantID: %s", participantKey)
 	
 		if queryOperator == "or" {
@@ -120,6 +120,7 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 			result.Add(resultUUIDs)
 		}
 	}
+	
 	if len(lookupKeys) > 0 {
 		resultUUIDs, err := indexStorageClient.LookupIndices(httpReqCtx, lookupKeys)
 		if err != nil {
