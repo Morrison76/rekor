@@ -26,7 +26,7 @@ type ParticipantrecordV001Schema struct {
 
 	// ID of the participant
 	// Required: true
-	ParticipantID *string `json:"ParticipantID"`
+	ParticipantID *string `json:"participantid"`
 
 	// Primary public key
 	// Required: true
