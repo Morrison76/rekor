@@ -44,6 +44,7 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 	var result = NewCollection(queryOperator)
 
 	var lookupKeys []string
+	log.Fatalf(" 1 Index search by participantID is looking by param: %s", params.Query.ParticipantID)
 
 	if params.Query.Hash != "" {
 		// This must be a valid hash
@@ -102,6 +103,9 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 			result.Add(resultUUIDs)
 		}
 	}
+
+	log.Fatalf("2 Index search by participantID is looking by param: %s", params.Query.ParticipantID)
+
 	if params.Query.ParticipantID != "" {
 		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(params.Query.ParticipantID))
 		log.Printf("[DEBUG] Search request by participantID: %s", participantKey)
