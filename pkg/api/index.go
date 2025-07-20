@@ -103,7 +103,7 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 		}
 	}
 	if params.Query.ParticipantID != "" {
-		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(*params.Query.ParticipantID))
+		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(params.Query.ParticipantID))
 		log.Printf("[DEBUG] Search request by participantID: %s", participantKey)
 	
 		if queryOperator == "or" {
