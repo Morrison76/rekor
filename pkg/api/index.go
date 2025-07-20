@@ -102,7 +102,7 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 			result.Add(resultUUIDs)
 		}
 	}
-	if params.Query.ParticipantID != nil && *params.Query.ParticipantID != "" {
+	if params.Query.ParticipantID != "" {
 		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(*params.Query.ParticipantID))
 		log.Printf("[DEBUG] Search request by participantID: %s", participantKey)
 	
