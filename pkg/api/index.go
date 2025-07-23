@@ -44,7 +44,6 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 	var result = NewCollection(queryOperator)
 
 	var lookupKeys []string
-	log.Printf(" 1 Index search by participantID is looking by param: %s", params.Query.ParticipantID)
 
 	if params.Query.Hash != "" {
 		// This must be a valid hash
@@ -104,8 +103,6 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 		}
 	}
 
-	log.Printf("2Index search by participantID is looking by param: %s", params.Query.ParticipantID)
-
 	if params.Query.ParticipantID != "" {
 		participantKey := fmt.Sprintf("participantid:%s", strings.ToLower(params.Query.ParticipantID))
 		log.Printf("[DEBUG] Search request by participantID: %s", participantKey)
@@ -113,13 +110,16 @@ func SearchIndexHandler(params index.SearchIndexParams) middleware.Responder {
 		if queryOperator == "or" {
 			log.Printf("[DEBUG] Appending participantKey to lookupKeys: %s", participantKey)
 			lookupKeys = append(lookupKeys, participantKey)
-		} else {
+		} else 
+		{
 			log.Printf("[DEBUG] Querying indexStorageClient.LookupIndices with key: %s", participantKey)
 			resultUUIDs, err := indexStorageClient.LookupIndices(httpReqCtx, []string{participantKey})
+			
 			if err != nil {
 				log.Printf("[ERROR] indexStorageClient.LookupIndices failed: %v", err)
 				return handleRekorAPIError(params, http.StatusInternalServerError, fmt.Errorf("index storage error: %w", err), indexStorageUnexpectedResult)
 			}
+
 			log.Printf("[DEBUG] Retrieved UUIDs: %v", resultUUIDs)
 			result.Add(resultUUIDs)
 		}
