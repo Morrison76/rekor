@@ -31,6 +31,10 @@ type ParticipantrecordV001Schema struct {
 	// Primary public key
 	// Required: true
 	PrimaryPK *string `json:"PrimaryPK"`
+
+	// Entry creation time in RFC3339 (ISO 8601)
+    // Required: true
+    EntryCreatedAt *time.Time `json:"createdAt"`
 }
 
 // Validate validates this participantrecord v001 schema

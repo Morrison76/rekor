@@ -33,6 +33,10 @@ type PkgTypesParticipantrecordV001ParticipantrecordV001Schema struct {
 	// Required: true
 	// Format: byte
 	PrimaryPK *strfmt.Base64 `json:"primaryPK"`
+
+	// Entry creation time in RFC3339 (ISO 8601)
+    // Required: true
+    EntryCreatedAt *time.Time `json:"createdAt"`
 }
 
 // Validate validates this pkg types participantrecord v001 participantrecord v001 schema

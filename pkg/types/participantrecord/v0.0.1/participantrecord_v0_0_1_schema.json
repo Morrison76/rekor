@@ -16,8 +16,13 @@
       "alternatePK": {
         "type": "string",
         "description": "Alternate public key (optional)"
-      }
+      },
+      "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Entry creation timestamp in RFC3339 format (ISO 8601)"
+    }
     },
-    "required": ["participantId", "primaryPK"]
+    "required": ["participantId", "primaryPK", "createdAt"]
   }
   

@@ -49,6 +49,7 @@ func (v *V001Entry) Canonicalize(_ context.Context) ([]byte, error) {
 		ParticipantID: v.Obj.ParticipantID,
 		PrimaryPK:     v.Obj.PrimaryPK,
 		AlternatePK:   v.Obj.AlternatePK,
+		EntryCreatedAt: v.Obj.EntryCreatedAt,
 	}
 
 	obj := models.Participantrecord{
