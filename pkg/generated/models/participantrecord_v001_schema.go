@@ -7,6 +7,7 @@ package models
 
 import (
 	"context"
+	"time"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
