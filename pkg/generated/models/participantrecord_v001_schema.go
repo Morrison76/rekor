@@ -23,15 +23,15 @@ import (
 type ParticipantrecordV001Schema struct {
 
 	// Alternate public key (optional)
-	AlternatePK string `json:"AlternatePK,omitempty"`
+	AlternatePK string `json:"alternatePK,omitempty"`
 
 	// ID of the participant
 	// Required: true
-	ParticipantID *string `json:"participantid"`
+	ParticipantID *string `json:"participantId"`
 
 	// Primary public key
 	// Required: true
-	PrimaryPK *string `json:"PrimaryPK"`
+	PrimaryPK *string `json:"primaryPK"`
 
 	// Entry creation time in RFC3339 (ISO 8601)
     // Required: true

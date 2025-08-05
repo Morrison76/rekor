@@ -28,7 +28,7 @@ type PkgTypesParticipantrecordV001ParticipantrecordV001Schema struct {
 
 	// Unique participant identifier
 	// Required: true
-	ParticipantID *string `json:"participantid"`
+	ParticipantID *string `json:"participantId"`
 
 	// Primary public key in PEM format
 	// Required: true
