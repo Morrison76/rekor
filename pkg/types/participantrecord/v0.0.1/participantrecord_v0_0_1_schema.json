@@ -28,6 +28,6 @@
         "description": "Specifies the encryption type used for documents associated with this participant (RSA when a participant key is available, DEFAULT when no key is provided)"
       }
     },
-    "required": ["participantId", "primaryPK", "createdAt"]
+    "required": ["participantId", "createdAt", "encryptionType"],
   }
   

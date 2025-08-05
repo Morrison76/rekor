@@ -31,7 +31,6 @@ type PkgTypesParticipantrecordV001ParticipantrecordV001Schema struct {
 	ParticipantID *string `json:"participantId"`
 
 	// Primary public key in PEM format
-	// Required: true
 	// Format: byte
 	PrimaryPK *strfmt.Base64 `json:"primaryPK"`
 

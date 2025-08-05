@@ -74,15 +74,39 @@ func (v *V001Entry) Unmarshal(pe models.ProposedEntry) error {
 	return v.validate()
 }
 
+const (
+	EncryptionTypeDefault = "DEFAULT"
+	EncryptionTypeRSA     = "RSA"
+)
+
+var allowedEncryptionTypes = []string{EncryptionTypeDefault, EncryptionTypeRSA}
+
 func (v *V001Entry) validate() error {
 	if strings.TrimSpace(swag.StringValue(v.Obj.ParticipantID)) == "" {
 		return errors.New("missing participantId")
 	}
-	if strings.TrimSpace(swag.StringValue(v.Obj.PrimaryPK)) == "" {
-		return errors.New("missing primaryPK")
+
+	encType := strings.TrimSpace(v.Obj.EncryptionType)
+	isAllowed := false
+	for _, t := range allowedEncryptionTypes {
+		if strings.EqualFold(encType, t) {
+			isAllowed = true
+			break
+		}
 	}
+	if !isAllowed {
+		return fmt.Errorf("invalid encryptionType '%s', allowed values: %v", encType, allowedEncryptionTypes)
+	}
+
+	if strings.EqualFold(encType, EncryptionTypeRSA) {
+		if strings.TrimSpace(swag.StringValue(v.Obj.PrimaryPK)) == "" {
+			return errors.New("missing primaryPK for RSA encryption type")
+		}
+	}
+
 	return nil
 }
+
 
 func (v *V001Entry) CreateFromArtifactProperties(_ context.Context, _ types.ArtifactProperties) (models.ProposedEntry, error) {
 	return nil, errors.New("not supported for participantrecord")

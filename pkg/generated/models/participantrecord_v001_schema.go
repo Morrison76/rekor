@@ -30,7 +30,6 @@ type ParticipantrecordV001Schema struct {
 	ParticipantID *string `json:"participantId"`
 
 	// Primary public key
-	// Required: true
 	PrimaryPK *string `json:"primaryPK"`
 
 	// Entry creation time in RFC3339 (ISO 8601)
@@ -52,8 +51,14 @@ func (m *ParticipantrecordV001Schema) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validatePrimaryPK(formats); err != nil {
+	if err := m.validateEncryptionType(formats); err != nil {
 		res = append(res, err)
+	}
+
+	if strings.EqualFold(m.EncryptionType, "RSA") {
+		if err := m.validatePrimaryPK(formats); err != nil {
+			res = append(res, err)
+		}
 	}
 
 	if len(res) > 0 {
@@ -78,6 +83,16 @@ func (m *ParticipantrecordV001Schema) validatePrimaryPK(formats strfmt.Registry)
 	}
 
 	return nil
+}
+
+func (m *ParticipantrecordV001Schema) validateEncryptionType(formats strfmt.Registry) error {
+	allowed := []string{"DEFAULT", "RSA"}
+	for _, v := range allowed {
+		if strings.EqualFold(m.EncryptionType, v) {
+			return nil
+		}
+	}
+	return fmt.Errorf("invalid encryptionType '%s', allowed values are: %v", m.EncryptionType, allowed)
 }
 
 // ContextValidate validates this participantrecord v001 schema based on context it is used
