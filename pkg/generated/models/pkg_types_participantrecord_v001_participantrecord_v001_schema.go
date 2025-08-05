@@ -38,6 +38,12 @@ type PkgTypesParticipantrecordV001ParticipantrecordV001Schema struct {
 	// Entry creation time in RFC3339 (ISO 8601)
     // Required: true
     EntryCreatedAt *time.Time `json:"createdAt"`
+
+	// Encryption type used for the document
+	// Defines the encryption type associated with this participant record.
+	// Supported values: "RSA" for key-based encryption, "DEFAULT" when no participant key is available.
+	// Required: true
+	EncryptionType string `json:"encryptionType"`
 }
 
 // Validate validates this pkg types participantrecord v001 participantrecord v001 schema

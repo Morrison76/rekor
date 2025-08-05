@@ -46,10 +46,11 @@ func (v *V001Entry) IndexKeys() ([]string, error) {
 
 func (v *V001Entry) Canonicalize(_ context.Context) ([]byte, error) {
 	canonicalEntry := models.ParticipantrecordV001Schema{
-		ParticipantID: v.Obj.ParticipantID,
-		PrimaryPK:     v.Obj.PrimaryPK,
-		AlternatePK:   v.Obj.AlternatePK,
-		EntryCreatedAt: v.Obj.EntryCreatedAt,
+		ParticipantID:   v.Obj.ParticipantID,
+		PrimaryPK:       v.Obj.PrimaryPK,
+		AlternatePK:     v.Obj.AlternatePK,
+		EntryCreatedAt:  v.Obj.EntryCreatedAt,
+		EncryptionType:  v.Obj.EncryptionType,
 	}
 
 	obj := models.Participantrecord{
