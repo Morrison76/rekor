@@ -37,12 +37,6 @@ type ParticipantrecordV001Schema struct {
 	// Entry creation time in RFC3339 (ISO 8601)
     // Required: true
     EntryCreatedAt *time.Time `json:"createdAt"`
-
-	// Encryption type used for the document
-	// Defines the encryption type associated with this participant record.
-	// Supported values: "RSA" for key-based encryption, "DEFAULT" when no participant key is available.
-	// Required: true
-	EncryptionType string `json:"encryptionType"`
 }
 
 // Validate validates this participantrecord v001 schema
@@ -51,16 +45,6 @@ func (m *ParticipantrecordV001Schema) Validate(formats strfmt.Registry) error {
 
 	if err := m.validateParticipantID(formats); err != nil {
 		res = append(res, err)
-	}
-
-	if err := m.validateEncryptionType(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if strings.EqualFold(m.EncryptionType, "RSA") {
-		if err := m.validatePrimaryPK(formats); err != nil {
-			res = append(res, err)
-		}
 	}
 
 	if len(res) > 0 {
@@ -85,16 +69,6 @@ func (m *ParticipantrecordV001Schema) validatePrimaryPK(formats strfmt.Registry)
 	}
 
 	return nil
-}
-
-func (m *ParticipantrecordV001Schema) validateEncryptionType(formats strfmt.Registry) error {
-	allowed := []string{"DEFAULT", "RSA"}
-	for _, v := range allowed {
-		if strings.EqualFold(m.EncryptionType, v) {
-			return nil
-		}
-	}
-	return fmt.Errorf("invalid encryptionType '%s', allowed values are: %v", m.EncryptionType, allowed)
 }
 
 // ContextValidate validates this participantrecord v001 schema based on context it is used

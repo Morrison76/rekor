@@ -50,7 +50,6 @@ func (v *V001Entry) Canonicalize(_ context.Context) ([]byte, error) {
 		PrimaryPK:       v.Obj.PrimaryPK,
 		AlternatePK:     v.Obj.AlternatePK,
 		EntryCreatedAt:  v.Obj.EntryCreatedAt,
-		EncryptionType:  v.Obj.EncryptionType,
 	}
 
 	obj := models.Participantrecord{
@@ -74,34 +73,13 @@ func (v *V001Entry) Unmarshal(pe models.ProposedEntry) error {
 	return v.validate()
 }
 
-const (
-	EncryptionTypeDefault = "DEFAULT"
-	EncryptionTypeRSA     = "RSA"
-)
-
-var allowedEncryptionTypes = []string{EncryptionTypeDefault, EncryptionTypeRSA}
-
 func (v *V001Entry) validate() error {
 	if strings.TrimSpace(swag.StringValue(v.Obj.ParticipantID)) == "" {
 		return errors.New("missing participantId")
 	}
 
-	encType := strings.TrimSpace(v.Obj.EncryptionType)
-	isAllowed := false
-	for _, t := range allowedEncryptionTypes {
-		if strings.EqualFold(encType, t) {
-			isAllowed = true
-			break
-		}
-	}
-	if !isAllowed {
-		return fmt.Errorf("invalid encryptionType '%s', allowed values: %v", encType, allowedEncryptionTypes)
-	}
-
-	if strings.EqualFold(encType, EncryptionTypeRSA) {
-		if strings.TrimSpace(swag.StringValue(v.Obj.PrimaryPK)) == "" {
-			return errors.New("missing primaryPK for RSA encryption type")
-		}
+	if strings.TrimSpace(v.Obj.PrimaryPk) == "" {
+		return errors.New("missing primaryPK")
 	}
 
 	return nil
