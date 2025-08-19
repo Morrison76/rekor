@@ -26,7 +26,7 @@ type SearchLogQuery struct {
 	entriesField []ProposedEntry
 
 	// entry u UI ds
-	// Max Items: 10
+	// Max Items: 50
 	// Min Items: 1
 	EntryUUIDs []string `json:"entryUUIDs"`
 
@@ -151,7 +151,7 @@ func (m *SearchLogQuery) validateEntries(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxItems("entries", "body", iEntriesSize, 10); err != nil {
+	if err := validate.MaxItems("entries", "body", iEntriesSize, 50); err != nil {
 		return err
 	}
 
@@ -182,7 +182,7 @@ func (m *SearchLogQuery) validateEntryUUIDs(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxItems("entryUUIDs", "body", iEntryUUIDsSize, 10); err != nil {
+	if err := validate.MaxItems("entryUUIDs", "body", iEntryUUIDsSize, 50); err != nil {
 		return err
 	}
 
