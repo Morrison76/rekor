@@ -78,13 +78,12 @@ func (v *V001Entry) validate() error {
 		return errors.New("missing participantId")
 	}
 
-	if strings.TrimSpace(v.Obj.PrimaryPK) == "" {
+	if strings.TrimSpace(swag.StringValue(v.Obj.PrimaryPK)) == "" {
 		return errors.New("missing primaryPK")
 	}
 
 	return nil
 }
-
 
 func (v *V001Entry) CreateFromArtifactProperties(_ context.Context, _ types.ArtifactProperties) (models.ProposedEntry, error) {
 	return nil, errors.New("not supported for participantrecord")

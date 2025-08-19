@@ -30,6 +30,7 @@ type ParticipantrecordV001Schema struct {
 	ParticipantID *string `json:"participantId"`
 
 	// Primary public key
+	// Required: true
 	PrimaryPK *string `json:"primaryPK"`
 
 	// Entry creation time in RFC3339 (ISO 8601)
