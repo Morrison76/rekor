@@ -78,7 +78,7 @@ func (v *V001Entry) validate() error {
 		return errors.New("missing participantId")
 	}
 
-	if strings.TrimSpace(v.Obj.PrimaryPk) == "" {
+	if strings.TrimSpace(v.Obj.PrimaryPK) == "" {
 		return errors.New("missing primaryPK")
 	}
 
