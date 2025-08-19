@@ -8,8 +8,6 @@ package models
 import (
 	"context"
 	"time"
-	"strings"
-	"fmt"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
