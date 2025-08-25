@@ -31,7 +31,7 @@ type SearchLogQuery struct {
 	EntryUUIDs []string `json:"entryUUIDs"`
 
 	// log indexes
-	// Max Items: 10
+	// Max Items: 10000
 	// Min Items: 1
 	LogIndexes []*int64 `json:"logIndexes"`
 }
@@ -208,7 +208,7 @@ func (m *SearchLogQuery) validateLogIndexes(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxItems("logIndexes", "body", iLogIndexesSize, 10); err != nil {
+	if err := validate.MaxItems("logIndexes", "body", iLogIndexesSize, 10000); err != nil {
 		return err
 	}
 

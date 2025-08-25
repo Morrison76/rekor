@@ -332,7 +332,7 @@ func TestSearchQueryLimit(t *testing.T) {
 			if resp.StatusCode != 422 && test.shouldErr {
 				t.Fatal("expected test to fail but it passed")
 			}
-			if test.shouldErr && !strings.Contains(string(c), "logIndexes in body should have at most 10 items") {
+			if test.shouldErr && !strings.Contains(string(c), "logIndexes in body should have at most 10000 items") {
 				t.Fatal("expected max limit error but didn't get it")
 			}
 		})
