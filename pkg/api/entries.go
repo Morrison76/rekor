@@ -64,7 +64,7 @@ import (
 )
 
 const (
-	maxSearchQueries = 10
+	maxSearchQueries = 10000
 )
 
 func signEntry(ctx context.Context, signer signature.Signer, entry models.LogEntryAnon) ([]byte, error) {
